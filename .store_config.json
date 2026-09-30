@@ -1,0 +1,59 @@
+{
+  "brandName": "winlium shop",
+  "brandTagline": "Fresh  goods",
+  "currencySymbol": "₦",
+  "currencyCode": "NGN",
+  "freeDeliveryThreshold": 50000,
+  "deliveryFee": 0,
+  "theme": {
+    "id": "ocean-blue",
+    "name": "Sapphire Blue",
+    "primary": "#1d4ed8",
+    "primaryHover": "#1e40af",
+    "primaryLight": "#eff6ff",
+    "secondary": "#0f172a",
+    "accent": "#38bdf8",
+    "background": "#f8fafc",
+    "surface": "#ffffff",
+    "text": "#0f172a",
+    "textMuted": "#64748b",
+    "border": "#e2e8f0",
+    "heroBgFrom": "#0c1e4a",
+    "heroBgVia": "#17367e",
+    "heroBgTo": "#07122e",
+    "footerBg": "#07122e",
+    "footerStripBg": "#0b1d44"
+  },
+  "productApi": {
+    "mode": "demo",
+    "baseUrl": "https://api.external-catalog.example.com",
+    "endpoint": "/api/v1/products",
+    "authType": "none",
+    "dataPath": "products",
+    "fieldMapping": {
+      "idField": "id",
+      "nameField": "title",
+      "priceField": "price",
+      "quantityField": "stock",
+      "categoryField": "category",
+      "imageField": "thumbnail",
+      "descriptionField": "description"
+    }
+  },
+  "orderApi": {
+    "mode": "demo",
+    "baseUrl": "https://api.external-orders.example.com",
+    "endpoint": "/api/v1/orders",
+    "authType": "bearer",
+    "authToken": "sk_live_demo_9a87d6f5e4",
+    "payloadFormat": "standard"
+  },
+  "heroEyebrow": "uuuuuuuuuuuu",
+  "heroDescription": "hhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+  "heroTitle": "hhhhhhhhhhhhhhhhhhhhhhhhhh",
+  "heroTitleAccent": "hhhhhhhhhhhhhhhh",
+  "heroPrimaryCta": "tttttttttttttt",
+  "heroDeliveryText": "ggggggggggg",
+  "heroTrustText": "yyyyyyyyyyyyyyyyyyyyyyyyyy",
+  "heroImageBadge": "yyyyyyyyyyyyyyyyyyy"
+}

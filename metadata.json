@@ -1,0 +1,5 @@
+{
+  "name": "microsite",
+  "description": "A modern, production-ready e-commerce storefront configured with winlium Product and Order API integrations, dynamic theming, and real-time cart and checkout.",
+  "requestFramePermissions": []
+}
