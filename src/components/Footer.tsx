@@ -1,18 +1,25 @@
-import React from 'react';
-import { Truck, ShieldCheck, Headphones, Sparkles, Leaf, Settings } from 'lucide-react';
-import { useStore } from '../context/StoreContext';
+import React from "react";
+import {
+  Truck,
+  ShieldCheck,
+  Headphones,
+  Sparkles,
+  Leaf,
+  Settings,
+} from "lucide-react";
+import { useStore } from "../context/StoreContext";
 
 export const Footer: React.FC = () => {
   const { config, setIsSettingsOpen } = useStore();
 
   return (
     <footer
-      style={{ backgroundColor: 'var(--color-footer-bg)' }}
+      style={{ backgroundColor: "var(--color-footer-bg)" }}
       className="mt-16 text-white transition-colors duration-300"
     >
       {/* Trust Badges Strip */}
       <div
-        style={{ backgroundColor: 'var(--color-footer-strip)' }}
+        style={{ backgroundColor: "var(--color-footer-strip)" }}
         className="border-b border-white/10 transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -22,8 +29,12 @@ export const Footer: React.FC = () => {
                 <Truck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-white tracking-wide">Fast Delivery</h4>
-                <p className="text-[11px] text-white/70">Get your orders quickly</p>
+                <h4 className="text-xs font-bold text-white tracking-wide">
+                  Fast Delivery
+                </h4>
+                <p className="text-[11px] text-white/70">
+                  Get your orders quickly
+                </p>
               </div>
             </div>
 
@@ -32,8 +43,12 @@ export const Footer: React.FC = () => {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-white tracking-wide">Secure Payments</h4>
-                <p className="text-[11px] text-white/70">Your information is safe</p>
+                <h4 className="text-xs font-bold text-white tracking-wide">
+                  Secure Payments
+                </h4>
+                <p className="text-[11px] text-white/70">
+                  Your information is safe
+                </p>
               </div>
             </div>
 
@@ -42,7 +57,9 @@ export const Footer: React.FC = () => {
                 <Headphones className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-white tracking-wide">24/7 Support</h4>
+                <h4 className="text-xs font-bold text-white tracking-wide">
+                  24/7 Support
+                </h4>
                 <p className="text-[11px] text-white/70">We're here to help</p>
               </div>
             </div>
@@ -52,8 +69,12 @@ export const Footer: React.FC = () => {
                 <Leaf className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-white tracking-wide">Quality Guaranteed</h4>
-                <p className="text-[11px] text-white/70">Only the best for you</p>
+                <h4 className="text-xs font-bold text-white tracking-wide">
+                  Quality Guaranteed
+                </h4>
+                <p className="text-[11px] text-white/70">
+                  Only the best for you
+                </p>
               </div>
             </div>
           </div>
