@@ -1,21 +1,28 @@
 /**
  * JomoMart - Production-Ready API-Driven E-Commerce Storefront
  */
-import React from 'react';
-import { StoreProvider } from './context/StoreContext';
-import { Header } from './components/Header';
-import { HeroBanner } from './components/HeroBanner';
-import { CategoryBar } from './components/CategoryBar';
-import { ProductGrid } from './components/ProductGrid';
-import { Footer } from './components/Footer';
-import { CartDrawer } from './components/CartDrawer';
-import { ProductDetailsModal } from './components/ProductDetailsModal';
-import { CheckoutModal } from './components/CheckoutModal';
-import { AdminSettingsModal } from './components/AdminSettingsModal';
-import { MakeItYoursWidget } from './components/MakeItYoursWidget';
-import { MobileBottomNav } from './components/MobileBottomNav';
+import React from "react";
+import { StoreProvider } from "./context/StoreContext";
+import { LoginPage } from "./components/LoginPage";
+import { Header } from "./components/Header";
+import { HeroBanner } from "./components/HeroBanner";
+import { CategoryBar } from "./components/CategoryBar";
+import { ProductGrid } from "./components/ProductGrid";
+import { Footer } from "./components/Footer";
+import { CartDrawer } from "./components/CartDrawer";
+import { ProductDetailsModal } from "./components/ProductDetailsModal";
+import { CheckoutModal } from "./components/CheckoutModal";
+import { AdminSettingsModal } from "./components/AdminSettingsModal";
+import { MakeItYoursWidget } from "./components/MakeItYoursWidget";
+import { MobileBottomNav } from "./components/MobileBottomNav";
 
 export default function App() {
+  const [isSignedIn, setIsSignedIn] = React.useState(false);
+
+  if (!isSignedIn) {
+    return <LoginPage onSignIn={() => setIsSignedIn(true)} />;
+  }
+
   return (
     <StoreProvider>
       <div className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] transition-colors selection:bg-[var(--color-primary-light)] selection:text-[var(--color-primary)] pb-16 md:pb-0">
