@@ -27,7 +27,7 @@ export default function App() {
     <StoreProvider>
       <div className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] transition-colors selection:bg-[var(--color-primary-light)] selection:text-[var(--color-primary)] pb-16 md:pb-0">
         {/* Navigation Top Bar */}
-        <Header />
+        <Header onLogout={() => setIsSignedIn(false)} />
 
         {/* Main Content Area */}
         <main className="flex-1">

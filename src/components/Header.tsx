@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
-import { ShoppingCart, Search, Settings, SlidersHorizontal, Leaf, X } from 'lucide-react';
-import { useStore } from '../context/StoreContext';
+import React, { useState } from "react";
+import {
+  ShoppingCart,
+  Search,
+  Settings,
+  SlidersHorizontal,
+  Leaf,
+  X,
+  LogOut,
+} from "lucide-react";
+import { useStore } from "../context/StoreContext";
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onLogout: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onLogout }) => {
   const {
     config,
     cartCount,
@@ -23,8 +35,8 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-8">
             <button
               onClick={() => {
-                setSelectedCategory('All');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setSelectedCategory("All");
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               className="flex items-center gap-2.5 group cursor-pointer text-left"
             >
@@ -34,7 +46,7 @@ export const Header: React.FC = () => {
                   alt={config.brandName}
                   className="h-9 w-auto object-contain"
                   onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
+                    (e.target as HTMLElement).style.display = "none";
                   }}
                 />
               ) : (
@@ -58,8 +70,8 @@ export const Header: React.FC = () => {
             <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[var(--color-text-muted)]">
               <button
                 onClick={() => {
-                  setSelectedCategory('All');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  setSelectedCategory("All");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 className="hover:text-[var(--color-primary)] transition-colors cursor-pointer"
               >
@@ -67,8 +79,8 @@ export const Header: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  const el = document.getElementById('catalogue-section');
-                  el?.scrollIntoView({ behavior: 'smooth' });
+                  const el = document.getElementById("catalogue-section");
+                  el?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="hover:text-[var(--color-primary)] transition-colors cursor-pointer"
               >
@@ -76,8 +88,8 @@ export const Header: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  const el = document.getElementById('categories-section');
-                  el?.scrollIntoView({ behavior: 'smooth' });
+                  const el = document.getElementById("categories-section");
+                  el?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="hover:text-[var(--color-primary)] transition-colors cursor-pointer"
               >
@@ -107,7 +119,7 @@ export const Header: React.FC = () => {
               />
               {searchQuery && (
                 <button
-                  onClick={() => setSearchQuery('')}
+                  onClick={() => setSearchQuery("")}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-[var(--color-text-muted)] hover:text-[var(--color-text)] cursor-pointer"
                 >
                   <X className="w-4 h-4" />
@@ -126,6 +138,16 @@ export const Header: React.FC = () => {
             >
               <Settings className="w-4 h-4 text-[var(--color-primary)]" />
               <span className="hidden sm:inline">Settings & APIs</span>
+            </button>
+
+            <button
+              onClick={onLogout}
+              className="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg border border-[var(--color-border)] text-[var(--color-text)] hover:bg-[var(--color-background)] transition-colors cursor-pointer"
+              title="Log out"
+              aria-label="Log out"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden sm:inline">Log out</span>
             </button>
 
             {/* Shopping Cart Button */}
@@ -167,7 +189,7 @@ export const Header: React.FC = () => {
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery('')}
+                onClick={() => setSearchQuery("")}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center text-[var(--color-text-muted)]"
               >
                 <X className="w-4 h-4" />
